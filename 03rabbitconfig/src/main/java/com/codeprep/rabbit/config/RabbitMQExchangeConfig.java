@@ -20,4 +20,24 @@ public class RabbitMQExchangeConfig {
 	Exchange exampleExchnageTwo() {
 		return ExchangeBuilder.directExchange("exampleExchangeTwo").autoDelete().internal().build();
 	}
+	
+	// example 3 fanout exchange
+	@Bean
+	Exchange exampleFanOutExchange() {
+		return ExchangeBuilder.fanoutExchange("testFanoutExchange")
+				.autoDelete()
+				.durable(true)
+				.internal()
+				.build();
+	}
+	
+	// example 4 headers exchange
+	@Bean
+	Exchange exampleHeadersExchange() {
+		return ExchangeBuilder.headersExchange("testHeadersExchange")
+				.internal()
+				.durable(true)
+				.ignoreDeclarationExceptions()
+				.build();
+	}
 }

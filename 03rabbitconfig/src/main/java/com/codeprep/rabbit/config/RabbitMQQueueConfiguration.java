@@ -33,7 +33,7 @@ public class RabbitMQQueueConfiguration {
 	}
 	
 	@Bean
-	MessageListenerContainer messageListenerContainer() {
+	MessageListenerContainer getSampleQueueMessageListenerContainer() {
 		SimpleMessageListenerContainer simpleMessageListenerContainer = new SimpleMessageListenerContainer();
 		simpleMessageListenerContainer.setConnectionFactory(connectionFactory());
 		simpleMessageListenerContainer.setQueues(exampleOneQueue());
